@@ -1,0 +1,36 @@
+html,body{
+    height:100%;
+    margin: 0;
+    padding: 0;
+}
+.container{
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.box{
+    background-color: #fff;
+    padding: 60px;
+    border-radius: 20px;
+    text-align: center;
+}
+h2{
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.text-area{
+    display: flex;
+    justify-content: center;
+}
+textarea{
+    height: 145px;
+    width: 375px;
+    border-radius: 12px;
+}
+button{
+    background: transparent;
+    border-radius: 20px;
+    width: 380px;
+    height: 30px;
+}
