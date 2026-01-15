@@ -1,36 +1,111 @@
-html,body{
-    height:100%;
+html, body {
+    height: 100%;
     margin: 0;
     padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    color: #333;
 }
-.container{
-    background-color: #333;
+
+.container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
+    animation: fadeIn 1.2s ease-in-out;
 }
-.box{
+
+.box {
     background-color: #fff;
     padding: 60px;
     border-radius: 20px;
     text-align: center;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: slideUp 1s ease-out;
 }
-h2{
+.box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0,0,0,0.35);
+}
+
+h2 {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #2c3e50;
+    letter-spacing: 1px;
+    animation: fadeInText 1.5s ease-in-out;
 }
-.text-area{
+
+.text-area {
     display: flex;
     justify-content: center;
+    margin-bottom: 20px;
 }
-textarea{
+
+textarea {
     height: 145px;
     width: 375px;
     border-radius: 12px;
+    border: 1px solid #ccc;
+    padding: 12px;
+    font-size: 15px;
+    resize: none;
+    outline: none;
+    transition: border 0.3s ease, box-shadow 0.3s ease;
+    animation: popIn 1.3s ease;
 }
-button{
-    background: transparent;
+textarea:focus {
+    border: 1px solid #3498db;
+    box-shadow: 0 0 8px rgba(52,152,219,0.5);
+}
+
+button {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    border: none;
     border-radius: 20px;
     width: 380px;
-    height: 30px;
+    height: 40px;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease;
+    animation: bounceIn 1.5s ease;
+}
+button:hover {
+    background: linear-gradient(135deg, #2980b9, #1f6391);
+    transform: scale(1.05);
+}
+button:active {
+    transform: scale(0.98);
+}
+
+/* 🔥 Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideUp {
+    from { transform: translateY(50px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes fadeInText {
+    from { opacity: 0; letter-spacing: -2px; }
+    to { opacity: 1; letter-spacing: 1px; }
+}
+
+@keyframes popIn {
+    0% { transform: scale(0.9); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes bounceIn {
+    0% { transform: scale(0.3); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    70% { transform: scale(0.95); }
+    100% { transform: scale(1); }
 }
